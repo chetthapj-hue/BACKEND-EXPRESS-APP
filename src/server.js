@@ -4,6 +4,10 @@ const app = express();
 const port = 3000
 
 //our very first API endpoint!
+// app.get('/', (req, res) => {
+//   res.send('Hello Client!, I am your Server!')
+// });
+
 app.get('/', (req, res) => {
   res.send(`<!doctype html>
   <html lang="en">
@@ -23,7 +27,7 @@ app.get('/', (req, res) => {
             This page is styled with <span class="font-semibold">Tailwind CSS</span> via CDN.
           </p>
           <div class="mt-6 flex flex-wrap items-center gap-3">
-            <a href="/members" class="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            <a href="/Users" class="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
               GET /Users
             </a>
             <span class="text-xs text-gray-500">Try POST/PUT/DELETE with your API client.</span>
