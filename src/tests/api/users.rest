@@ -10,5 +10,5 @@ Content-Type: application/json
     "email": "charlie@example.com"
 }
 ### DELETE requse to delete a user
-DELETE http://localhost:3000/api/v1/users/4
+DELETE http://localhost:3000/api/v1/users/3
 
