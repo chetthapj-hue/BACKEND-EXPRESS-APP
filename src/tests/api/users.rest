@@ -1,13 +1,14 @@
 ### GET request to read all users
-GET http://localhost:3000/api/v1/users
+GET http://localhost:3000/api/v2/users
 
 ### POST request to create a new user
 POST http://localhost:3000/api/v1/users
 Content-Type: application/json
 
 {
-    "name": "Charlie",
-    "email": "charlie@example.com"
+    "username": "chettha",
+    "email": "chettha@example.com",
+    "password": "123123"
 }
 ### DELETE requse to delete a user
 DELETE http://localhost:3000/api/v1/users/3
