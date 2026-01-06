@@ -17,6 +17,10 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("Hello word");
+})
+
 app.use("/api", apiRoutes);
 
 //Catch-all for 404 Not Found ดีไซerror message ว่ามีอะไรบ้าง
