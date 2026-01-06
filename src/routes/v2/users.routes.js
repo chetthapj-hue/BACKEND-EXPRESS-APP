@@ -18,4 +18,4 @@ router.post("/", createUser2);
 // the funtion inside is called Route  Handler /Controller
 router.delete("/:id", deleteUser2);
 
-router.patch("/:id", updateUser2)
+router.patch("/:id", updateUser2);
