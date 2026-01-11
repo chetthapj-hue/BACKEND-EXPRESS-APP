@@ -8,9 +8,24 @@ Content-Type: application/json
 {
     "username": "chettha",
     "email": "chettha@example.com",
-    "password": "12312378",
+    "password": "12345678",
     "role": "admin"
 }
 ### DELETE requse to delete a user
-DELETE http://localhost:3000/api/v1/users/3
+DELETE http://localhost:3000/api/v2/users/3
 
+### POST Loing a user
+POST  http://localhost:3000/api/v2/users/auth/cookie/login
+Content-Type:  application/json
+
+{
+    "email": "chettha@example.com",
+    "password": "12345678"
+}
+
+
+###POST logout a user
+POST http://localhost:3000/api/v2/users/auth/cookie/logout
+
+### GET check user authentication
+GET http://localhost:3000/api/v2/users/auth/cookie/me

@@ -1,8 +1,16 @@
 import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
+import helmet from "helmet"
 import { router as apiRoutes } from "./routes/index.js"
+import { limiter } from "./middlewares/reteLimiter.js";
 
 export const app = express();
+
+app.set("trust proxy", 1)
+
+// Global middlewares
+app.use(helmet());
 
 const corsOptions = {
     origin: [
@@ -11,15 +19,21 @@ const corsOptions = {
         "http://localhost:5175",
         "https://jsd-react-assessment-solution-gilt.vercel.app",
     ],
+    credentials: true
 };
 
 app.use(cors(corsOptions));
 
+app.use(limiter);
+
 app.use(express.json());
+
+// Middleware to parse cookie (required for cookie-based auth)
+app.use(cookieParser());
 
 app.get("/", (req, res) => {
     res.send("Hello word");
-})
+});
 
 app.use("/api", apiRoutes);
 
